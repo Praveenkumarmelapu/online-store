@@ -20,6 +20,7 @@ export function AuthProvider({ children }) {
     try {
       const response = await authAPI.getProfile();
       setUser(response.data);
+      return response.data;
     } catch (error) {
       localStorage.removeItem('access_token');
       localStorage.removeItem('refresh_token');
@@ -33,8 +34,8 @@ export function AuthProvider({ children }) {
     const response = await authAPI.login({ email, password });
     localStorage.setItem('access_token', response.data.access);
     localStorage.setItem('refresh_token', response.data.refresh);
-    await fetchProfile();
-    return response.data;
+    const profile = await fetchProfile();
+    return { tokens: response.data, user: profile };
   };
 
   const register = async (data) => {

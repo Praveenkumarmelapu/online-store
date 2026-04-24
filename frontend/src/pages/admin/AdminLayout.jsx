@@ -63,12 +63,7 @@ export default function AdminLayout() {
             ))}
           </nav>
 
-          <div className="p-4 border-t border-dark-800">
-            <Link to="/" className="flex items-center gap-3 px-4 py-3 rounded-xl text-dark-400 hover:bg-dark-800 hover:text-white transition-all font-medium">
-              <HiHome className="w-5 h-5" />
-              Store Front
-            </Link>
-          </div>
+
         </div>
       </aside>
 

@@ -20,9 +20,13 @@ export default function Login() {
     }
     setLoading(true);
     try {
-      await login(email, password);
+      const result = await login(email, password);
       toast.success('Welcome back!');
-      navigate('/');
+      if (result.user?.is_staff) {
+        navigate('/admin');
+      } else {
+        navigate('/');
+      }
     } catch (error) {
       toast.error(error.response?.data?.detail || 'Invalid email or password');
     } finally {

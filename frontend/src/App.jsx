@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -33,6 +33,12 @@ const AdminCoupons = lazy(() => import('./pages/admin/Coupons'));
 const AdminSettings = lazy(() => import('./pages/admin/Settings'));
 
 function PublicLayout({ children }) {
+  const { isAdmin, loading } = useAuth();
+
+  if (!loading && isAdmin) {
+    return <Navigate to="/admin" replace />;
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
