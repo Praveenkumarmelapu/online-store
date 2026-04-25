@@ -73,53 +73,53 @@ for data in categories_data:
 products_data = [
     # Namkeen & Mixtures
     {'name': 'Classic Namkeen Mix', 'category': 'Namkeen & Mixtures', 'price': 199, 'discount_price': 179,
-     'description': 'A perfect blend of sev, peanuts, raisins, and crispy lentils. Freshly made with premium ingredients and traditional spices.', 'stock': 50, 'is_featured': True, 'weight': '250g'},
+     'description': 'A perfect blend of sev, peanuts, raisins, and crispy lentils. Freshly made with premium ingredients and traditional spices.', 'stock': 50, 'is_featured': True, 'weight': '250g', 'image_url': '/static/images/products/spicy_mixture.png'},
     {'name': 'Cornflakes Mixture', 'category': 'Namkeen & Mixtures', 'price': 249, 'discount_price': 219,
-     'description': 'Crunchy cornflakes mixed with roasted peanuts, curry leaves, and aromatic spices.', 'stock': 40, 'is_featured': True, 'weight': '300g'},
+     'description': 'Crunchy cornflakes mixed with roasted peanuts, curry leaves, and aromatic spices.', 'stock': 40, 'is_featured': True, 'weight': '300g', 'image_url': '/static/images/products/spicy_mixture.png'},
     {'name': 'Aloo Bhujia', 'category': 'Namkeen & Mixtures', 'price': 149, 'discount_price': None,
-     'description': 'Thin and crispy potato noodles seasoned with a blend of traditional spices.', 'stock': 60, 'weight': '200g'},
+     'description': 'Thin and crispy potato noodles seasoned with a blend of traditional spices.', 'stock': 60, 'weight': '200g', 'image_url': '/static/images/products/spicy_mixture.png'},
     {'name': 'Moong Dal Namkeen', 'category': 'Namkeen & Mixtures', 'price': 179, 'discount_price': 159,
-     'description': 'Crispy fried moong dal seasoned with salt, pepper, and a hint of asafoetida.', 'stock': 35, 'weight': '250g'},
+     'description': 'Crispy fried moong dal seasoned with salt, pepper, and a hint of asafoetida.', 'stock': 35, 'weight': '250g', 'image_url': '/static/images/products/spicy_mixture.png'},
 
     # Dry Fruits & Nuts
     {'name': 'Premium Cashews', 'category': 'Dry Fruits & Nuts', 'price': 599, 'discount_price': 549,
-     'description': 'Whole premium grade cashew nuts, roasted with a pinch of Himalayan pink salt.', 'stock': 30, 'is_featured': True, 'weight': '250g'},
+     'description': 'Whole premium grade cashew nuts, roasted with a pinch of Himalayan pink salt.', 'stock': 30, 'is_featured': True, 'weight': '250g', 'image_url': '/static/images/products/premium_cashews.png'},
     {'name': 'Roasted Almonds', 'category': 'Dry Fruits & Nuts', 'price': 649, 'discount_price': None,
-     'description': 'California almonds lightly roasted to perfection. Rich in protein and healthy fats.', 'stock': 25, 'weight': '250g'},
+     'description': 'California almonds lightly roasted to perfection. Rich in protein and healthy fats.', 'stock': 25, 'weight': '250g', 'image_url': '/static/images/products/premium_cashews.png'},
     {'name': 'Mixed Dry Fruits Pack', 'category': 'Dry Fruits & Nuts', 'price': 899, 'discount_price': 799,
-     'description': 'A wholesome mix of almonds, cashews, raisins, and pistachios.', 'stock': 20, 'is_featured': True, 'weight': '500g'},
+     'description': 'A wholesome mix of almonds, cashews, raisins, and pistachios.', 'stock': 20, 'is_featured': True, 'weight': '500g', 'image_url': '/static/images/products/premium_cashews.png'},
     {'name': 'Salted Pistachios', 'category': 'Dry Fruits & Nuts', 'price': 749, 'discount_price': None,
-     'description': 'Iranian pistachios lightly salted and roasted. Perfect for snacking.', 'stock': 15, 'weight': '200g'},
+     'description': 'Iranian pistachios lightly salted and roasted. Perfect for snacking.', 'stock': 15, 'weight': '200g', 'image_url': '/static/images/products/premium_cashews.png'},
 
     # Sweets
     {'name': 'Besan Ladoo', 'category': 'Sweets', 'price': 349, 'discount_price': 299,
-     'description': 'Melt-in-mouth besan ladoos made with pure ghee, sugar, and cardamom.', 'stock': 40, 'is_featured': True, 'weight': '500g'},
+     'description': 'Melt-in-mouth besan ladoos made with pure ghee, sugar, and cardamom.', 'stock': 40, 'is_featured': True, 'weight': '500g', 'image_url': '/static/images/products/besan_ladoo.png'},
     {'name': 'Coconut Barfi', 'category': 'Sweets', 'price': 299, 'discount_price': None,
-     'description': 'Rich and creamy coconut barfi made with fresh desiccated coconut and condensed milk.', 'stock': 30, 'weight': '400g'},
+     'description': 'Rich and creamy coconut barfi made with fresh desiccated coconut and condensed milk.', 'stock': 30, 'weight': '400g', 'image_url': '/static/images/products/besan_ladoo.png'},
     {'name': 'Kaju Katli', 'category': 'Sweets', 'price': 499, 'discount_price': 449,
-     'description': 'Thin, diamond-shaped cashew fudge. A premium delicacy for festive occasions.', 'stock': 25, 'weight': '250g'},
+     'description': 'Thin, diamond-shaped cashew fudge. A premium delicacy for festive occasions.', 'stock': 25, 'weight': '250g', 'image_url': '/static/images/products/besan_ladoo.png'},
 
     # Chips & Crisps
     {'name': 'Banana Chips', 'category': 'Chips & Crisps', 'price': 149, 'discount_price': 129,
-     'description': 'Crispy banana chips made from raw Kerala bananas, fried in coconut oil.', 'stock': 60, 'is_featured': True, 'weight': '200g'},
+     'description': 'Crispy banana chips made from raw Kerala bananas, fried in coconut oil.', 'stock': 60, 'is_featured': True, 'weight': '200g', 'image_url': '/static/images/products/crispy_murukku.png'},
     {'name': 'Tapioca Chips', 'category': 'Chips & Crisps', 'price': 129, 'discount_price': None,
-     'description': 'Thin and crunchy tapioca chips with a light seasoning of salt and spices.', 'stock': 45, 'weight': '200g'},
+     'description': 'Thin and crunchy tapioca chips with a light seasoning of salt and spices.', 'stock': 45, 'weight': '200g', 'image_url': '/static/images/products/crispy_murukku.png'},
     {'name': 'Sweet Potato Chips', 'category': 'Chips & Crisps', 'price': 179, 'discount_price': 159,
-     'description': 'Naturally sweet, crispy chips made from fresh sweet potatoes.', 'stock': 35, 'weight': '150g'},
+     'description': 'Naturally sweet, crispy chips made from fresh sweet potatoes.', 'stock': 35, 'weight': '150g', 'image_url': '/static/images/products/crispy_murukku.png'},
 
     # Pickles & Chutneys
     {'name': 'Mango Pickle', 'category': 'Pickles & Chutneys', 'price': 199, 'discount_price': None,
-     'description': 'Traditional raw mango pickle made with mustard oil and aromatic spices.', 'stock': 40, 'weight': '300g'},
+     'description': 'Traditional raw mango pickle made with mustard oil and aromatic spices.', 'stock': 40, 'weight': '300g', 'image_url': '/static/images/products/spicy_mixture.png'},
     {'name': 'Mixed Vegetable Pickle', 'category': 'Pickles & Chutneys', 'price': 229, 'discount_price': 199,
-     'description': 'A tangy mix of carrot, cauliflower, lemon, and green chilli pickle.', 'stock': 30, 'weight': '300g'},
+     'description': 'A tangy mix of carrot, cauliflower, lemon, and green chilli pickle.', 'stock': 30, 'weight': '300g', 'image_url': '/static/images/products/spicy_mixture.png'},
 
     # Cookies & Biscuits
     {'name': 'Butter Cookies', 'category': 'Cookies & Biscuits', 'price': 249, 'discount_price': 219,
-     'description': 'Rich and buttery cookies baked to golden perfection. Made with premium butter.', 'stock': 50, 'is_featured': True, 'weight': '300g'},
+     'description': 'Rich and buttery cookies baked to golden perfection. Made with premium butter.', 'stock': 50, 'is_featured': True, 'weight': '300g', 'image_url': '/static/images/products/besan_ladoo.png'},
     {'name': 'Whole Wheat Biscuits', 'category': 'Cookies & Biscuits', 'price': 179, 'discount_price': None,
-     'description': 'Healthy whole wheat biscuits with a hint of jaggery sweetness.', 'stock': 45, 'weight': '250g'},
+     'description': 'Healthy whole wheat biscuits with a hint of jaggery sweetness.', 'stock': 45, 'weight': '250g', 'image_url': '/static/images/products/besan_ladoo.png'},
     {'name': 'Chocolate Chip Cookies', 'category': 'Cookies & Biscuits', 'price': 299, 'discount_price': 269,
-     'description': 'Loaded with premium chocolate chips. Soft, chewy, and utterly delicious.', 'stock': 35, 'weight': '250g'},
+     'description': 'Loaded with premium chocolate chips. Soft, chewy, and utterly delicious.', 'stock': 35, 'weight': '250g', 'image_url': '/static/images/products/besan_ladoo.png'},
 ]
 
 for data in products_data:
