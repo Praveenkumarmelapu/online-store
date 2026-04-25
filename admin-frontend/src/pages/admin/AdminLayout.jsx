@@ -70,7 +70,7 @@ export default function AdminLayout() {
             <hr className="my-4 border-dark-800" />
 
             <a
-              href="http://localhost:5173/"
+              href="https://snackstore-frontend.onrender.com/"
               className="flex items-center gap-3 px-4 py-3 rounded-xl text-dark-400 hover:bg-dark-800 hover:text-white transition-all font-medium"
             >
               <HiExternalLink className="w-5 h-5" />
