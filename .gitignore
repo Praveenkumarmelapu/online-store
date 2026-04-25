@@ -48,3 +48,7 @@ Thumbs.db
 
 # Database
 # db.sqlite3  <-- Commented out because user wants to keep the cleaned up DB
+
+# Static and Media
+backend/staticfiles/
+backend/media/
