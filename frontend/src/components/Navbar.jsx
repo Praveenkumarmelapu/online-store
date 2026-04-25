@@ -114,7 +114,7 @@ export default function Navbar() {
                           My Orders
                         </Link>
                         {isAdmin && (
-                          <a href="http://localhost:5174/" className="block px-4 py-2 text-sm text-primary-600 font-medium hover:bg-primary-50 transition-colors">
+                          <a href="https://snackstore-admin.onrender.com/" className="block px-4 py-2 text-sm text-primary-600 font-medium hover:bg-primary-50 transition-colors">
                             Admin Dashboard
                           </a>
                         )}
@@ -186,34 +186,19 @@ export default function Navbar() {
 
                 {isAuthenticated ? (
                   <>
-                    <Link to="/orders" className="flex items-center gap-3 py-3 px-4 rounded-xl text-dark-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">
-                      <HiClipboardList className="w-5 h-5" /> My Orders
-                    </Link>
-                    <Link to="/profile" className="flex items-center gap-3 py-3 px-4 rounded-xl text-dark-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">
-                      <HiUser className="w-5 h-5" /> My Profile
-                    </Link>
-                    {isAdmin && (
-                      <a href="http://localhost:5174/" className="flex items-center gap-3 py-3 px-4 rounded-xl text-primary-600 font-medium hover:bg-primary-50 transition-colors">
-                        <HiClipboardList className="w-5 h-5" /> Admin Dashboard
-                      </a>
-                    )}
-
                     <hr className="border-dark-100 my-2" />
 
-                    {/* User Info */}
-                    <div className="flex items-center gap-3 px-4 py-3 bg-dark-50 rounded-xl">
-                      <div className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center text-white font-bold">
-                        {(user?.first_name?.[0] || 'U').toUpperCase()}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="font-medium text-sm text-dark-800 truncate">{user?.first_name} {user?.last_name}</p>
-                        <p className="text-xs text-dark-400 truncate">{user?.email}</p>
-                      </div>
+                    <div className="bg-dark-50 rounded-xl p-4 space-y-3">
+                      <Link to="/profile" className="flex items-center gap-3 py-2 text-dark-700 hover:text-primary-600 font-medium transition-colors">
+                        <HiUser className="w-5 h-5" /> My Profile
+                      </Link>
+                      <Link to="/orders" className="flex items-center gap-3 py-2 text-dark-700 hover:text-primary-600 font-medium transition-colors">
+                        <HiClipboardList className="w-5 h-5" /> My Orders
+                      </Link>
+                      <button onClick={handleLogout} className="w-full flex items-center gap-3 py-2 text-red-600 hover:text-red-700 transition-colors font-medium border-t border-dark-100 pt-3 mt-1">
+                        <HiLogout className="w-5 h-5" /> Logout
+                      </button>
                     </div>
-
-                    <button onClick={handleLogout} className="w-full flex items-center gap-3 py-3 px-4 rounded-xl text-red-600 hover:bg-red-50 transition-colors font-medium mt-2">
-                      <HiLogout className="w-5 h-5" /> Logout
-                    </button>
                   </>
                 ) : (
                   <div className="space-y-3 pt-4">
