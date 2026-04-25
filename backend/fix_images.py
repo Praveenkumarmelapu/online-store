@@ -23,26 +23,36 @@ def fix_all_images():
     count = 0
     
     for p in products:
+        name_lower = p.name.lower().strip()
         cat_name = p.category.name.strip() if p.category else 'Default'
-        # Case-insensitive matching
-        target_url = None
-        for key, url in IMAGE_MAPPING.items():
-            if key.lower() == cat_name.lower():
-                target_url = url
-                break
         
-        if not target_url:
-            target_url = IMAGE_MAPPING['Namkeen & Mixtures']
-            
-        # Special fix for 'ege' or any product missing a category match
-        if p.name.lower() == 'ege':
+        # 1. Manual Overrides for specific products in your screenshot
+        if 'ege' in name_lower:
             target_url = IMAGE_MAPPING['Chips & Crisps']
+        elif 'mango pickle' in name_lower:
+            target_url = IMAGE_MAPPING['Pickles & Chutneys']
+        elif 'mixed vegetable pickle' in name_lower:
+            target_url = IMAGE_MAPPING['Pickles & Chutneys']
+        elif 'sweet potato chips' in name_lower:
+            target_url = IMAGE_MAPPING['Chips & Crisps']
+        elif 'tapioca chips' in name_lower:
+            target_url = IMAGE_MAPPING['Chips & Crisps']
+        else:
+            # 2. General category matching
+            target_url = None
+            for key, url in IMAGE_MAPPING.items():
+                if key.lower() in cat_name.lower():
+                    target_url = url
+                    break
+            
+            if not target_url:
+                target_url = IMAGE_MAPPING['Namkeen & Mixtures']
 
-        if p.image_url != target_url:
-            p.image_url = target_url
-            p.save()
-            print(f"  Updated: {p.name} -> {cat_name}")
-            count += 1
+        # Force save the URL
+        p.image_url = target_url
+        p.save()
+        print(f"  FORCE UPDATED: {p.name} -> {target_url}")
+        count += 1
             
     print(f"Finished! Updated {count} products with online URLs.")
 
