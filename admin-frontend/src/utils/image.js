@@ -1,4 +1,5 @@
-const API_HOST = '';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://snackstore-backend.onrender.com/api';
+const API_HOST = API_BASE_URL.replace('/api', '');
 
 export function getImageUrl(value) {
   if (!value || typeof value !== 'string') return null;
