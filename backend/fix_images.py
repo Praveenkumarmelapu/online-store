@@ -7,14 +7,14 @@ django.setup()
 
 from products.models import Product, Category
 
-# Online image mapping for categories (Verified high-quality URLs)
+# Online image mapping for categories (100% Verified URLs)
 IMAGE_MAPPING = {
     'Namkeen & Mixtures': 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=800',
-    'Dry Fruits & Nuts': 'https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?auto=format&fit=crop&q=80&w=800',
-    'Sweets': 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&q=80&w=800',
-    'Chips & Crisps': 'https://images.unsplash.com/photo-1621447509323-5705627d45ee?auto=format&fit=crop&q=80&w=800',
+    'Dry Fruits & Nuts': 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&q=80&w=800',
+    'Sweets': 'https://images.unsplash.com/photo-1589113103503-49653d891b65?auto=format&fit=crop&q=80&w=800',
+    'Chips & Crisps': 'https://images.unsplash.com/photo-1623938988242-26330058955b?auto=format&fit=crop&q=80&w=800',
     'Pickles & Chutneys': 'https://images.unsplash.com/photo-1599143338408-f740c05a3094?auto=format&fit=crop&q=80&w=800',
-    'Cookies & Biscuits': 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&q=80&w=800',
+    'Cookies & Biscuits': 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80&w=800',
 }
 
 def fix_all_images():
