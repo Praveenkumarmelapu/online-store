@@ -125,9 +125,11 @@ products_data = [
 for data in products_data:
     cat_name = data.pop('category')
     data['category'] = categories[cat_name]
-    product, created = Product.objects.get_or_create(name=data['name'], defaults=data)
+    product, created = Product.objects.update_or_create(name=data['name'], defaults=data)
     if created:
         print("  Created product: {}".format(data['name']))
+    else:
+        print("  Updated product: {}".format(data['name']))
 
 # Create coupons
 coupons_data = [
