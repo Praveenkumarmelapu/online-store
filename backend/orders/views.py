@@ -126,8 +126,8 @@ class OrderListView(generics.ListAPIView):
         return Order.objects.filter(user=self.request.user)
 
 
-class OrderDetailView(generics.RetrieveAPIView):
-    """Get order details."""
+class OrderDetailView(generics.RetrieveDestroyAPIView):
+    """Get or Delete order details."""
     serializer_class = OrderSerializer
     permission_classes = [permissions.IsAuthenticated]
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { HiEye, HiX, HiPhone, HiLocationMarker, HiClock, HiCurrencyRupee, HiPrinter } from 'react-icons/hi';
+import { HiEye, HiX, HiPhone, HiLocationMarker, HiClock, HiCurrencyRupee, HiPrinter, HiTrash } from 'react-icons/hi';
 import { ordersAPI } from '../../services/api';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import toast from 'react-hot-toast';
@@ -42,6 +42,17 @@ export default function AdminOrders() {
       }
     } catch (error) { toast.error('Failed to update status'); }
   };
+  
+  const handleDeleteOrder = async (id) => {
+    if (!window.confirm('Are you sure you want to delete this order? This action cannot be undone.')) return;
+    try {
+      await ordersAPI.deleteOrder(id);
+      toast.success('Order deleted successfully');
+      fetchOrders();
+    } catch (error) {
+      toast.error('Failed to delete order');
+    }
+  };
 
   if (loading) return <LoadingSpinner />;
 
@@ -82,8 +93,11 @@ export default function AdminOrders() {
                     {new Date(order.created_at).toLocaleDateString('en-IN', { month: 'short', day: 'numeric' })}
                   </td>
                   <td className="px-4 py-3 text-right">
-                    <button onClick={() => fetchOrderDetail(order.id)} className="p-1.5 text-dark-400 hover:text-primary-500 transition-colors">
+                    <button onClick={() => fetchOrderDetail(order.id)} className="p-1.5 text-dark-400 hover:text-primary-500 transition-colors" title="View Details">
                       <HiEye className="w-5 h-5" />
+                    </button>
+                    <button onClick={() => handleDeleteOrder(order.id)} className="p-1.5 text-dark-400 hover:text-red-500 transition-colors" title="Delete Order">
+                      <HiTrash className="w-5 h-5" />
                     </button>
                   </td>
                 </tr>

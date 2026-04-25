@@ -99,6 +99,7 @@ export const ordersAPI = {
   getOrder: (id) => api.get(`/orders/${id}/`),
   updateOrderStatus: (id, status) =>
     api.patch(`/orders/${id}/status/`, { status }),
+  deleteOrder: (id) => api.delete(`/orders/${id}/`),
 };
 
 // ─── Settings APIs ───
