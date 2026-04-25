@@ -114,9 +114,9 @@ export default function Navbar() {
                           My Orders
                         </Link>
                         {isAdmin && (
-                          <Link to="/admin" className="block px-4 py-2 text-sm text-primary-600 font-medium hover:bg-primary-50 transition-colors">
+                          <a href="http://localhost:5174/" className="block px-4 py-2 text-sm text-primary-600 font-medium hover:bg-primary-50 transition-colors">
                             Admin Dashboard
-                          </Link>
+                          </a>
                         )}
                         <hr className="my-1 border-dark-100" />
                         <button onClick={handleLogout} className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors flex items-center gap-2">
@@ -193,9 +193,9 @@ export default function Navbar() {
                       <HiUser className="w-5 h-5" /> My Profile
                     </Link>
                     {isAdmin && (
-                      <Link to="/admin" className="flex items-center gap-3 py-3 px-4 rounded-xl text-primary-600 font-medium hover:bg-primary-50 transition-colors">
+                      <a href="http://localhost:5174/" className="flex items-center gap-3 py-3 px-4 rounded-xl text-primary-600 font-medium hover:bg-primary-50 transition-colors">
                         <HiClipboardList className="w-5 h-5" /> Admin Dashboard
-                      </Link>
+                      </a>
                     )}
 
                     <hr className="border-dark-100 my-2" />

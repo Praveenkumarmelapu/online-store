@@ -46,45 +46,9 @@ A complete, production-ready full-stack eCommerce web application for a homemade
 
 ```
 online store/
-├── backend/                      # Django Backend
-│   ├── config/                   # Project settings
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   └── wsgi.py
-│   ├── accounts/                 # User auth & profiles
-│   ├── products/                 # Products & categories
-│   ├── cart/                     # Shopping cart
-│   ├── orders/                   # Orders & checkout
-│   ├── coupons/                  # Coupon system
-│   ├── analytics/                # Admin analytics APIs
-│   ├── seed_data.py              # Database seeder
-│   ├── manage.py
-│   └── requirements.txt
-│
-├── frontend/                     # React Frontend
-│   ├── src/
-│   │   ├── components/           # Navbar, Footer, ProductCard, etc.
-│   │   ├── pages/                # All page components
-│   │   │   ├── admin/            # Admin dashboard pages
-│   │   │   ├── Home.jsx
-│   │   │   ├── ProductList.jsx
-│   │   │   ├── ProductDetail.jsx
-│   │   │   ├── Cart.jsx
-│   │   │   ├── Checkout.jsx
-│   │   │   ├── Profile.jsx
-│   │   │   ├── Login.jsx
-│   │   │   └── Register.jsx
-│   │   ├── context/              # AuthContext, CartContext
-│   │   ├── services/             # API service layer
-│   │   └── App.jsx               # Routes & layout
-│   ├── tailwind.config.js
-│   └── vite.config.js
-│
-├── docker-compose.yml
-├── Dockerfile.backend
-├── Dockerfile.frontend
-├── nginx.conf
-└── README.md
+├── backend/                      # Django Backend (Port 8000)
+├── frontend/                     # React Storefront (Port 5173)
+└── admin-frontend/               # React Admin Panel (Port 5174)
 ```
 
 ---
@@ -92,60 +56,43 @@ online store/
 ## 🚀 Quick Start (Development)
 
 ### Prerequisites
-- Python 3.6+
+- Python 3.8+
 - Node.js 18+
-- npm 9+
 
 ### 1. Backend Setup
-
 ```bash
 cd backend
-
-# Install Python dependencies
 pip install -r requirements.txt
-
-# Run database migrations
-python manage.py makemigrations
 python manage.py migrate
-
-# Seed sample data (categories, products, users, coupons)
-python seed_data.py
-
-# Start the Django development server
 python manage.py runserver 8000
 ```
 
-### 2. Frontend Setup
-
+### 2. Storefront Setup
 ```bash
 cd frontend
-
-# Install Node dependencies
 npm install
-
-# Start the Vite dev server
 npm run dev
 ```
 
-### 3. Open the App
-
-- **Frontend**: http://localhost:5173
-- **Backend API**: http://localhost:8000/api/
-- **Django Admin**: http://localhost:8000/admin/
+### 3. Admin Panel Setup
+```bash
+cd admin-frontend
+npm install
+npm run dev
+```
 
 ### Demo Accounts
 
 | Role | Email | Password |
 |------|-------|----------|
-| **Super Admin** | praveen@gmail.com | praveen123 |
-| **Admin** | snack@gmail.com | snack123 |
+| **Admin** | admin@snackstore.com | admin123 |
 | **Customer** | customer@example.com | customer123 |
 
-### ✨ Recent Enhancements
-- **Enhanced Admin Dashboard**: Real-time order notifications and visual alerts.
-- **WhatsApp Integration**: Manual order confirmation with full details from Admin Panel.
-- **Improved UX**: Auto "Scroll to Top" on navigation and "Show Password" toggles.
-- **Production Ready**: Optimized backend settings and frontend build pipeline.
+### ✨ Key Features
+- **Project Separation**: Independent Storefront and Admin applications for better performance.
+- **Responsive Design**: Fully optimized for Mobile, Tablet, and Desktop.
+- **Fast Loading**: Optimized asset handling and proxying for seamless image delivery.
+- **WhatsApp Integration**: Direct order confirmation from the Admin Panel.
 
 ---
 

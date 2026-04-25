@@ -34,9 +34,6 @@ class ProductSerializer(serializers.ModelSerializer):
         if obj.image_url:
             return obj.image_url
         if obj.image:
-            request = self.context.get('request')
-            if request:
-                return request.build_absolute_uri(obj.image.url)
             return obj.image.url
         return None
 
@@ -60,8 +57,5 @@ class ProductListSerializer(serializers.ModelSerializer):
         if obj.image_url:
             return obj.image_url
         if obj.image:
-            request = self.context.get('request')
-            if request:
-                return request.build_absolute_uri(obj.image.url)
             return obj.image.url
         return None
