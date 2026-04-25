@@ -23,11 +23,21 @@ def fix_all_images():
     count = 0
     
     for p in products:
-        # ALWAYS update if it's currently a broken Unsplash URL or a local path
-        # or if we want to ensure category-correct images
-        cat_name = p.category.name if p.category else 'Default'
-        target_url = IMAGE_MAPPING.get(cat_name, IMAGE_MAPPING['Namkeen & Mixtures'])
+        cat_name = p.category.name.strip() if p.category else 'Default'
+        # Case-insensitive matching
+        target_url = None
+        for key, url in IMAGE_MAPPING.items():
+            if key.lower() == cat_name.lower():
+                target_url = url
+                break
         
+        if not target_url:
+            target_url = IMAGE_MAPPING['Namkeen & Mixtures']
+            
+        # Special fix for 'ege' or any product missing a category match
+        if p.name.lower() == 'ege':
+            target_url = IMAGE_MAPPING['Chips & Crisps']
+
         if p.image_url != target_url:
             p.image_url = target_url
             p.save()

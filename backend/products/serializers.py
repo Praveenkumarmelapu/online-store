@@ -31,10 +31,14 @@ class ProductSerializer(serializers.ModelSerializer):
         read_only_fields = ['slug']
 
     def get_display_image(self, obj):
+        request = self.context.get('request')
         if obj.image_url:
             return obj.image_url
         if obj.image:
-            return obj.image.url
+            image_url = obj.image.url
+            if request:
+                return request.build_absolute_uri(image_url)
+            return image_url
         return None
 
 
@@ -54,8 +58,12 @@ class ProductListSerializer(serializers.ModelSerializer):
                   'stock', 'in_stock', 'is_active', 'is_featured', 'weight']
 
     def get_display_image(self, obj):
+        request = self.context.get('request')
         if obj.image_url:
             return obj.image_url
         if obj.image:
-            return obj.image.url
+            image_url = obj.image.url
+            if request:
+                return request.build_absolute_uri(image_url)
+            return image_url
         return None
